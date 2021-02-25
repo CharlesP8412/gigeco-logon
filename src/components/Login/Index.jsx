@@ -11,14 +11,12 @@ export default function Index(props) {
     }));
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('CLICK', form);
+    console.log('CLICK Submit', form);
   };
-  console.log(form);
   return (
     <div>
       <h1> LOGIN PAGE</h1>
-      <form>
+      <form onSubmit={(event) => event.preventDefault()}>
         <label for='username'>
           <b>Username</b>
         </label>
@@ -27,7 +25,7 @@ export default function Index(props) {
           <b>Password</b>
         </label>
         <input type='password' placeholder='Enter Password' name='password' required onChange={handleChange} />
-        <button type='submit' onSubmit={handleSubmit}>
+        <button type='submit' onClick={() => handleSubmit()}>
           Login
         </button>
       </form>
