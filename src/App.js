@@ -1,16 +1,19 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
-import logo from './Assets/logo.svg';
+
+import Welcome from './components/Welcome'
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-          Login successful, welcome
-      </header>
-    </div>
+
+    <Router>
+      <Switch>
+        <Route path="/"><Welcome /></Route>
+      </Switch>
+    </Router>
+
   );
 }
 
