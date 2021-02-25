@@ -1,3 +1,13 @@
+# Login / Signup for Gigeco
+
+Simple sign-up/login/logout page using React as part of our interview's coding challenge.
+
+You are only required to implement the frontend portion of the stack, for the backend functionality by https://www.memberstack.io/.
+
+The page should allow a new user to signup (with username and password) and then subsequently login to a blank/sample page with their credentials.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
