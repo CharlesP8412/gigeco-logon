@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Redirect, Link } from 'react-router-dom';
 
 export default function Index(props) {
   const [form, setForm] = useState();
-
+  const test = { username: 'test', password: 'test' };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({
@@ -11,24 +12,31 @@ export default function Index(props) {
     }));
   };
   const handleSubmit = (e) => {
-    console.log('CLICK Submit', form);
+    console.log('CLICK');
+    //Hard Coded auth
+    if (form) {
+      if (test.username === form.username && test.password === form.password) {
+        return props.history.push('/');
+      }
+    }
   };
   return (
     <div>
       <h1> LOGIN PAGE</h1>
       <form onSubmit={(event) => event.preventDefault()}>
-        <label for='username'>
+        <label htmlFor='username'>
           <b>Username</b>
         </label>
         <input type='text' placeholder='Enter Username' name='username' required onChange={handleChange} />
-        <label for='password'>
+        <label htmlFor='password'>
           <b>Password</b>
         </label>
         <input type='password' placeholder='Enter Password' name='password' required onChange={handleChange} />
-        <button type='submit' onClick={() => handleSubmit()}>
+        <button type='submit' onClick={handleSubmit}>
           Login
         </button>
       </form>
+      <Link to='/signup'>Sign up</Link>
     </div>
   );
 }
