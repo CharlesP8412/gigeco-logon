@@ -13,17 +13,11 @@ export default function Index(props) {
       [name]: value,
     }));
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    console.log('CLICK SUBMIT');
-    console.log('STORAGE', localStorage.getItem('memberstack'));
-    // return props.history.push('/');
-  };
   return (
     <div>
       <h1> SIGNUP PAGE!</h1>
-      <form data-ms-form='signup' onSubmit={handleSubmit} autoComplete='off'>
+      <form data-ms-form='signup' onSubmit={(e) => e.preventDefault()} autoComplete='off'>
         <label htmlFor='username'>
           <b>Username</b>
         </label>

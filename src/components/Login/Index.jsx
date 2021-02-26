@@ -17,12 +17,11 @@ export default function Index(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('CLICK');
   };
   return (
     <div>
       <h1> LOGIN PAGE</h1>
-      <form data-ms-form='login'>
+      <form data-ms-form='login' onSubmit={handleSubmit}>
         <label htmlFor='username'>
           <b>Username</b>
         </label>
@@ -45,9 +44,7 @@ export default function Index(props) {
           required
           onChange={handleChange}
         />
-        <button type='submit' onClick={handleSubmit}>
-          Login
-        </button>
+        <button type='submit'>Login</button>
       </form>
       <Link to='/signup'>Sign up</Link>
     </div>
