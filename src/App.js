@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import './App.css';
 
@@ -14,12 +14,11 @@ function App() {
     console.log("MS Loaded")
   }, []);
 
-  const [msStorage, setStorage] = React.useState(
+  const [msStorage, setStorage] = useState(
     JSON.parse(localStorage.getItem('memberstack')) || ''
   );
   const userEmail = msStorage.email
 
-  console.log("TEST", userEmail)
   function PrivateRoute({ children, ...rest }) {
     return (
       <Route {...rest} render={() => {
