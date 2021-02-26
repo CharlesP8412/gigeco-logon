@@ -28,7 +28,7 @@ Note:
 
 KNOWN ISSUES:
 
-- MS Reload requires a line of code below it to work (Investigating)
+- MS Reload requires a line of code (console log) below it to work (Investigating)
 
 ---
 
