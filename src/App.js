@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import './App.css';
 
@@ -8,6 +8,11 @@ import SignUp from './components/SignUp/Index'
 
 
 function App() {
+  useEffect(() => {
+    //Reload Required when using React
+    window.MemberStack.reload();
+    console.log("MS Loaded")
+  }, []);
 
   const [msStorage, setStorage] = React.useState(
     JSON.parse(localStorage.getItem('memberstack')) || ''

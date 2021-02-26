@@ -1,6 +1,7 @@
 {
-  "name": "gigeco-logon",
+  "name": "reactMemberStack",
   "version": "0.1.0",
+  "author": "Charles Prystupa, @CharlesP8412",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",

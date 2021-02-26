@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default function Index(props) {
   const [form, setForm] = useState();
-  useEffect(() => {
-    window.MemberStack.reload();
-  }, []);
+  // useEffect(() => {
+  //   window.MemberStack.reload();
+  // }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,26 +15,23 @@ export default function Index(props) {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
   return (
     <div>
-      <h1> LOGIN PAGE</h1>
-      <form data-ms-form='login' onSubmit={handleSubmit}>
-        <label htmlFor='username'>
-          <b>Username</b>
+      <h1> Please Login</h1>
+      <form data-ms-form='login' onSubmit={(e) => e.preventDefault()}>
+        <label htmlFor='email'>
+          <b>Email: </b>
         </label>
         <input
           data-ms-member='email'
           type='text'
-          placeholder='Enter Username'
-          name='username'
+          placeholder='Enter your email'
+          name='email'
           required
           onChange={handleChange}
         />
         <label htmlFor='password'>
-          <b>Password</b>
+          <b>Password: </b>
         </label>
         <input
           data-ms-member='password'
