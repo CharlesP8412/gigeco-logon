@@ -16,19 +16,15 @@ Notes:
 ```
 Note:
 - React only renders components so the MS script needs to be reloaded on each re-render using `window.MemberStack.reload()`
-- Reload was placed in each component because when it was lifted to the App component functionality  was intermittent.
+- Reload is placed in each component because when it was lifted to the App component functionality  was intermittent.
 ```
 
-2. Following MS directions forms use MS Data Attributes
+2. Following MS directions forms and inputs use MS Data Attributes
 
 - Redirection is handled by MS Setting
 - LocalStorage is updated by MS
 
 3. Welcome Page is inside a PrivateRoute, After checking that a user is logged in (MS Data in localstorage), then the component is rendered.
-
-KNOWN ISSUES:
-
-- MS Reload requires a line of code (console log) below it to work (Investigating)
 
 ---
 
