@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Index(props) {
   const [form, setForm] = useState();
+
+  useEffect(() => {
+    //Reload Required when using React
+    window.MemberStack.reload();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

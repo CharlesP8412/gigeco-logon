@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Index(props) {
@@ -12,8 +12,13 @@ export default function Index(props) {
     }));
   };
 
+  useEffect(() => {
+    //Reload Required when using React
+    window.MemberStack.reload();
+  }, []);
+
   return (
-    <div className='signUp'>
+    <div>
       <h1> Sign Up</h1>
       <form data-ms-form='signup' onSubmit={(e) => e.preventDefault()} autoComplete='off'>
         <label htmlFor='email'>
