@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import './App.css';
 
 import Welcome from './components/Welcome'
@@ -8,12 +8,25 @@ import SignUp from './components/SignUp/Index'
 
 
 function App() {
+  let auth = true
+  function PrivateRoute({ children, ...rest }) {
+    return (
+      <Route {...rest} render={() => {
+        return auth === true
+          ? children
+          : <Redirect to="/login" />
+      }} />
+    )
+  }
+
   return (
     <Router>
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={SignUp} />
-      <Route exact path="/" component={Welcome} />
-    </Router>
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
+        <PrivateRoute path='/'><Welcome /></PrivateRoute>
+      </Switch>
+    </Router >
 
   );
 }

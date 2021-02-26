@@ -23,7 +23,7 @@ export default function Index(props) {
   return (
     <div>
       <h1> LOGIN PAGE</h1>
-      <form onSubmit={(event) => event.preventDefault()}>
+      <form data-ms-form='login' onSubmit={(event) => event.preventDefault()}>
         <label htmlFor='username'>
           <b>Username</b>
         </label>
