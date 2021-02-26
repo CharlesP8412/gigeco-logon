@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Index(props) {
   const [form, setForm] = useState();
@@ -27,11 +27,25 @@ export default function Index(props) {
         <label htmlFor='username'>
           <b>Username</b>
         </label>
-        <input type='text' placeholder='Enter Username' name='username' required onChange={handleChange} />
+        <input
+          data-ms-member='email'
+          type='text'
+          placeholder='Enter Username'
+          name='username'
+          required
+          onChange={handleChange}
+        />
         <label htmlFor='password'>
           <b>Password</b>
         </label>
-        <input type='password' placeholder='Enter Password' name='password' required onChange={handleChange} />
+        <input
+          data-ms-member='password'
+          type='password'
+          placeholder='Enter Password'
+          name='password'
+          required
+          onChange={handleChange}
+        />
         <button type='submit' onClick={handleSubmit}>
           Login
         </button>

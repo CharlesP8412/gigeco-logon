@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Index(props) {
@@ -14,6 +14,7 @@ export default function Index(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('CLICK SUBMIT');
+
     //Create User Obj and Send to mbrstack
 
     //Once Cfm'd redirect to home
@@ -46,10 +47,9 @@ export default function Index(props) {
           required
           onChange={handleChange}
         />
-        <button type='submit'>Login</button>
+        <button type='submit'>Sign Up</button>
       </form>
       <Link to='/login'>Login</Link>
-      <button data-ms-membership='60381549ec2dc10004917c87'>Test</button>
     </div>
   );
 }
