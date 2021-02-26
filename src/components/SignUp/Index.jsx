@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Index(props) {
   const [form, setForm] = useState();
-  // useEffect(() => {
-  //   window.MemberStack.reload();
-  // }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({
@@ -15,7 +13,7 @@ export default function Index(props) {
   };
 
   return (
-    <div>
+    <div className='signUp'>
       <h1> Sign Up</h1>
       <form data-ms-form='signup' onSubmit={(e) => e.preventDefault()} autoComplete='off'>
         <label htmlFor='email'>
@@ -42,7 +40,7 @@ export default function Index(props) {
         />
         <button type='submit'>Sign Up</button>
       </form>
-      <Link to='/login'>Login</Link>
+      <Link to='/login'>Already have an account? Login</Link>
     </div>
   );
 }
