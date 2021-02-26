@@ -32,7 +32,11 @@ KNOWN ISSUES:
 
 ---
 
-To Run, In the project directory, you can run:
+To Install, In the project directory, you can run:
+Close the Repo
+Run `npm install`
+
+To Run the app
 
 ### `npm start`
 
