@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Index(props) {
   const [form, setForm] = useState();
-  const test = { username: 'test', password: 'test' };
+  // const test = { username: 'test', password: 'test' };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({
@@ -11,19 +11,22 @@ export default function Index(props) {
       [name]: value,
     }));
   };
+
   const handleSubmit = (e) => {
+    e.preventDefault();
     console.log('CLICK');
+
     //Hard Coded auth
-    if (form) {
-      if (test.username === form.username && test.password === form.password) {
-        return props.history.push('/');
-      }
-    }
+    // if (form) {
+    //   if (test.username === form.username && test.password === form.password) {
+    //     return props.history.push('/');
+    //   }
+    // }
   };
   return (
     <div>
       <h1> LOGIN PAGE</h1>
-      <form data-ms-form='login' onSubmit={(event) => event.preventDefault()}>
+      <form data-ms-form='login'>
         <label htmlFor='username'>
           <b>Username</b>
         </label>
