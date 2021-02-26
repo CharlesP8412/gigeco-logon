@@ -8,11 +8,17 @@ import SignUp from './components/SignUp/Index'
 
 
 function App() {
-  let auth = true
+
+  const [msStorage, setStorage] = React.useState(
+    JSON.parse(localStorage.getItem('memberstack')) || ''
+  );
+  const userEmail = msStorage.email
+
+  console.log("TEST", userEmail)
   function PrivateRoute({ children, ...rest }) {
     return (
       <Route {...rest} render={() => {
-        return auth === true
+        return userEmail
           ? children
           : <Redirect to="/login" />
       }} />
@@ -24,7 +30,7 @@ function App() {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
-        <PrivateRoute path='/welcome'><Welcome /></PrivateRoute>
+        <PrivateRoute path='/'><Welcome user={userEmail} /></PrivateRoute>
       </Switch>
     </Router >
 
