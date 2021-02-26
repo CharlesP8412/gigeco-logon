@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../Assets/logo.svg';
 
 export default function Welcome({ user }) {
+  useEffect(() => {
+    window.MemberStack.reload();
+  }, []);
   const handleLogout = () => {
     window.MemberStack.logout();
   };

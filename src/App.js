@@ -9,9 +9,7 @@ import SignUp from './components/SignUp/Index'
 
 function App() {
   useEffect(() => {
-    //Reload Required when using React
     window.MemberStack.reload();
-    console.log("MS Loaded")
   }, []);
 
   const [msStorage, setStorage] = useState(

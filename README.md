@@ -9,14 +9,14 @@ User will be redirected to a private welcome page on success and has the option 
 
 Notes:
 
-**Memberstack script needs to be every html view**
+**Memberstack script needs to be every HTML view**
 
-1. Add Memberstack (Refered to as MS here after) script to the head of the sites HTML `/public/index.html`
+1. Add Memberstack (Referred to as 'MS' hereafter) script to the head of the sites HTML `/public/index.html`
 
 ```
 Note:
-- React only renders components so the MS script needs to be reloaded on each re-render using `window.MemberStack.reload()` located in the App Component.
-- For an unknown reason, MS reload doesn't always fire; however if a console log is below the reload it will work.
+- React only renders components so the MS script needs to be reloaded on each re-render using `window.MemberStack.reload()`
+- Reload was placed in each component because when it was lifted to the App component functionality  was intermittent.
 ```
 
 2. Following MS directions forms use MS Data Attributes
